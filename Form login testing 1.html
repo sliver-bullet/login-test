@@ -9,7 +9,7 @@
 
 <h2>Register Account</h2>
 
-<form>
+<form  onsubmit="return myFunction()"> 
   <label for="fname">Username</label><br>
   <input type="text" id="fname" name="fname"><br>
   <label for="pwd">Password:</label><br>
@@ -25,10 +25,23 @@
   <label for="male">Male</label>
   <input type="radio" id="female" name="gender" value="female">
   <label for="female">Female</label><br><br>
-<button onclick="Submit()">Submit</button>
+  <input type="submit" value="Submit">
+
 <script>
-function Submit() {
-  alert("Register Success");
+function myFunction() {
+  var hphone1 = document.getElementById("hphone").value;
+    alert("注册成功！");
+    submitOK = "true";
+
+  if (isNaN(hphone1) || hphone1 < 0 || hphone1 > 99999999999) {
+    alert("请输入正确的手机号");
+    submitOK = "false";
+  }
+
+  if (submitOK == "false") {
+    return false;
+  }
+
 }
 </script>
 ​  <input type="reset"><br><br>
