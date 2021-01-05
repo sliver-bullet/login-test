@@ -30,17 +30,13 @@
 <script>
 function myFunction() {
   var hphone1 = document.getElementById("hphone").value;
-    alert("注册成功！");
-    submitOK = "true";
-
-  if (isNaN(hphone1) || hphone1 < 0 || hphone1 > 99999999999) {
-    alert("请输入正确的手机号");
-    submitOK = "false";
+  if (hphone1.length ==11) {
+    alert("注册成功!");
   }
-
-  if (submitOK == "false") {
-    return false;
+    else {
+    alert("请输入正确手机号!");
   }
+// 确认手机号是11位数字,若不是弹出提示框
 
 }
 </script>
